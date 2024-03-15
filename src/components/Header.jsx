@@ -3,6 +3,7 @@ import MenuItem from "@/components/MenuItem";
 import {AiFillHome} from "react-icons/ai";
 import {BsFillInfoCircleFill} from "react-icons/bs";
 import Link from "next/link";
+import ThemeModeToggleButton from "@/components/ThemeModeToggleButton";
 
 export default function Header(props) {
     return (
@@ -11,9 +12,13 @@ export default function Header(props) {
             <MenuItem title="Home" address="/" Icon={AiFillHome}/>
                 <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill}/>
             </div>
-            <Link href="/">
-                <span className=" text-white px-2 py-1 bg-zinc-900 rounded-lg" >MovieDB</span>
-            </Link>
+            <div className="flex items-center gap-4">
+                <ThemeModeToggleButton/>
+                <Link href="/">
+                    <span className=" text-white px-2 py-1 bg-zinc-900 rounded-lg" >MovieDB</span>
+                </Link>
+            </div>
+
         </div>
     );
 }
