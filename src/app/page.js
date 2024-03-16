@@ -17,6 +17,8 @@ export default async function Home({ searchParams }) {
 
 
     return (
-       <Results results={results}/>
+        <div>
+            <Results results={results}/>
+        </div>
     );
 }
