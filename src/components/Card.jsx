@@ -7,7 +7,7 @@ export default function Card({results}) {
     return (
         <div className="group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-300">
             <Link href={`/movie/${results.id}`}>
-                <Image className="group-hover:opacity-75 transition-opacity duration-300 sm:rounded-t-lg w-full " src={`https://image.tmdb.org/t/p/original/${results.backdrop_path}`} alt="poster" width={500} height={300}/>
+                <Image className="group-hover:opacity-75 transition-opacity duration-300 sm:rounded-t-lg w-full " src={`https://image.tmdb.org/t/p/original/${results?.backdrop_path}`} alt="poster" width={500} height={300}/>
 <div className="p-2">
     <p className="line-clamp-2 text-md">{results.overview}</p>
     <h2 className="text-lg font-bold truncate">{results.title || results.name} </h2>
