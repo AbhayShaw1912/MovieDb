@@ -7,11 +7,11 @@ WORKDIR /app
 #copy packages from package.json
 COPY package*.json ./
 
-#copy files
-COPY . .
 
 #install dependencies
 RUN npm install
+#copy files
+COPY . .
 
 
 #expose port to run the app
