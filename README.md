@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MovieDb Web App
+
+A web application built with **Next.js** and **Tailwind CSS** that fetches trending and popular movies from the **TMDb API**.
+
+## Features
+- Fetches and displays **trending** and **popular** movies.
+- Fully responsive, styled with **Tailwind CSS**.
+- Simple and clean interface to explore movie information.
+
+---
+
+## Prerequisites
+
+Before you start, make sure you have the following installed on your machine:
+
+- **Node.js** (v12.x or later)
+- **npm** (v6.x or later)
+- **Docker** (if using Docker)
+
+If you're using Docker, make sure you have Docker Desktop installed for Windows/macOS, or Docker daemon running on Linux. Follow the necessary setup instructions for your system:
+
+Windows/macOS: Install and run Docker Desktop.
+
+Linux: Install Docker and ensure the Docker daemon is running.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/AbhayShaw1912/MovieDb.git
+cd MovieDb
+```
+### 2.Setup Environment Variables
+Create a .env.local file in the root of your project and add the following line:
+```bash
+API_KEY=your_tmdb_api_key_here
+```
+Replace your_tmdb_api_key_here with the actual API key you copied from TMDb.
+
+### 3. Running Locally (Way 1)
+
+#### Install Dependencies
+
+```bash
+npm install
+```
+### Run the Development Server
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Now, open your browser and visit http://localhost:3000 to see the app in action.
+
+### 4. Running with Docker (Way 2)
+To run the app using Docker, follow these steps:
+
+### Step 1: Add API_KEY
+Ensure that the .env.local file is correctly set up with your TMDb API key before building the Docker image.
+```bash
+API_KEY=your_tmdb_api_key_here
+```
+### Step 2: Build the Docker Image
+The docker build command creates a Docker image of the app. You can name the image whatever you'd like (e.g., moviedb-app). The name you choose will be used when you run the container later.
+```bash
+docker build -t movie-db .
+```
+Note: Replace movie-db with any name you'd like for your Docker image. This is just the image name and can be changed to anything.
+### Step 3: Run the Docker Container
+After building the image, run the container using the following command. This will expose the app on port 3000 on your local machine.
+```bash
+docker run -p 3000:3000 movie-db
+```
+Note: If you used a different name for the image (instead of movie-db), make sure to replace movie-db in the docker run command with the name you used during the build process.
+
+Now, open your browser and visit http://localhost:3000 to access the app running in Docker.
+
+### Directory Structure
+Here's a quick overview of the project's directory structure:
+
+```bash
+.
+├── components/           # React Components for UI
+├── pages/                # Next.js pages
+├── public/               # Static assets (images, fonts, etc.)
+├── styles/               # Global styles (Tailwind CSS)
+├── .env.local           # Environment variables (API_KEY)
+├── Dockerfile            # Docker build instructions
+├── package.json          # Project metadata and dependencies
+└── next.config.js        # Next.js configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr/>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Screenshot 📸
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+  <img src="https://github.com/user-attachments/assets/766200e9-fe8e-44d5-a4a7-568a23bd735d" width="200" />
+  <img src="https://github.com/user-attachments/assets/c3c45f91-baf2-40f7-9341-f56d255f76bc" width="200" />
+  <img src="https://github.com/user-attachments/assets/aceb028f-165e-4166-9e6d-450c79be1881" width="200" />
+  <img src="https://github.com/user-attachments/assets/a818514b-160d-4728-87c2-f20d47367b3e" width="200" />
+</div>
